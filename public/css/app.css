@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* resources/css/retro_style.css */
+
+/* Global & Body */
+:root {
+    --color-bg-light: #fefcfc; /* Putih Gading */
+    --color-bg-main: #fcf4f9; /* Lilac/Pink Pastel */
+    --color-primary: #523e74; /* Ungu Gelap (untuk teks utama) */
+    --color-accent-pink: #f7a0b5; /* Pink Cerah */
+    --color-shadow-light: #e0d4e5;
+}
+
+.retro-body {
+    background-color: var(--color-bg-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+    font-family: sans-serif; /* Ganti dengan font retro */
+}
+
+.page-container {
+    background-color: var(--color-bg-light);
+    width: 95%;
+    max-width: 1400px;
+    border-radius: 30px;
+    padding: 30px 60px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Navigasi --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.nav-links a {
+    margin-right: 25px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.create-account-btn {
+    background: transparent;
+    color: var(--color-primary);
+    padding: 8px 15px;
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-btn {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Membagi ruang */
+    gap: 40px;
+    align-items: center;
+    min-height: 500px;
+    position: relative;
+    overflow: hidden; /* Penting untuk visual di luar batas */
+}
+
+.main-title {
+    font-size: 4.5rem;
+    line-height: 0.9;
+    color: var(--color-primary);
+    /* Untuk efek tulisan tebal/retro, gunakan font-family yang sesuai */
+    font-family: 'Bebas Neue', cursive; 
+    text-transform: uppercase;
+}
+
+.main-title .accent-text {
+    /* Font yang berbeda, lebih melengkung */
+    font-family: 'Pacifico', cursive; 
+    color: var(--color-primary);
+    /* Shadow untuk efek 3D retro */
+    text-shadow: 3px 3px 0px var(--color-accent-pink); 
+}
+
+.description {
+    max-width: 450px;
+    margin-top: 20px;
+    color: #4b4b4b;
+}
+
+.get-started-btn {
+    background-color: var(--color-accent-pink);
+    color: white;
+    padding: 12px 35px;
+    border: 2px solid var(--color-primary); /* Garis tepi untuk kesan retro */
+    border-radius: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px var(--color-primary); /* Shadow Kotak */
+    transition: all 0.1s;
+}
+.get-started-btn:hover {
+    box-shadow: 2px 2px 0px var(--color-primary);
+    transform: translate(2px, 2px);
+}
+
+/* --- Visual Element --- */
+.hero-visual {
+    position: relative;
+    padding: 40px;
+}
+
+.image-frame {
+    background-color: white;
+    padding: 10px;
+    border: 3px solid var(--color-accent-pink);
+    box-shadow: 10px 10px 0px var(--color-shadow-light);
+    transform: rotate(3deg); /* Efek miring */
+    position: relative;
+    z-index: 10;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Elemen Dekoratif (Sangat penting di sini) --- */
+
+.yummy-text {
+    position: absolute;
+    top: -20px;
+    left: 100px;
+    font-size: 3rem;
+    font-family: 'Pacifico', cursive;
+    color: white;
+    z-index: 20;
+    /* Efek teks melengkung dan shadow */
+    text-shadow: 4px 4px 0 var(--color-accent-pink), -2px -2px 0 var(--color-primary);
+    transform: rotate(-8deg);
+}
+
+.checkerboard-pattern {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 150px;
+    height: 150px;
+    z-index: 5;
+    /* Ini harus berupa background image/SVG kotak-kotak atau dibuat dengan CSS */
+    background-image: linear-gradient(45deg, #f7a0b5 25%, transparent 25%), 
+                      linear-gradient(-45deg, #f7a0b5 25%, transparent 25%),
+                      linear-gradient(45deg, transparent 75%, #f7a0b5 75%),
+                      linear-gradient(-45deg, transparent 75%, #f7a0b5 75%);
+    background-size: 20px 20px; /* Ukuran kotak */
+    transform: rotate(15deg);
+}
