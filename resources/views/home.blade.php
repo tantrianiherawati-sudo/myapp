@@ -3,53 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Kawaii Sushi - Yummy!</title>
-    
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Bebas+Neue:wght@400;700&display=swap" rel="stylesheet"> 
+    <title>Daftar Buku</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="retro-body">
+<body class="p-5">
 
-    <div class="page-container">
-        <header class="navbar">
-            <nav class="nav-links">
-                <a href="#">About Us</a>
-                <a href="#">The Market</a>
-                <a href="#">Subsidiaries</a>
-                <a href="#">Products</a>
-            </nav>
-        </header>
+    <h2 class="text-center mb-4">📚 Daftar Buku</h2>
 
-        <main class="hero-section">
-            
-            <div class="hero-content">
-                <div class="title-group">
-                    <h1 class="main-title">THE <span class="accent-text">Kawaii Sushi</span></h1>
-                </div>
-                
-                <p class="description">
-                    あたらしい おすし を、さいこう の カワイイ で どうぞ！ほんもの の うまみ と、かわいい みため で、きょう が あかるく なります よ。わくわく する あじ の たび に でる じゅんび は いい です か？
-                </p>
-                
-                <button class="get-started-btn">Get started</button>
-            </div>
-
-            <div class="hero-visual">
-                <div class="yummy-text">Yummy!</div>
-                
-                <div class="checkerboard-pattern"></div>
-                
-                <div class="image-frame">
-                    <img src="{{ asset('img/kawaiisushi.jpeg') }}" alt="Makanan" class="main-image">
-                </div>
-                
-                <div class="cherry-illustration">🍒</div> 
-
-                <div class="decorative-arrow">-></div>
-            </div>
-        </main>
-    </div>
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>No</th>
+                <th>Judul Buku</th>
+                <th>Penulis</th>
+                <th>Tahun Terbit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($books as $index => $book)
+                <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $book['judul'] }}</td>
+                    <td>{{ $book['penulis'] }}</td>
+                    <td>{{ $book['tahun'] }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 
 </body>
 </html>

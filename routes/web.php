@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController; // tambahkan ini
 
-Route::get('/', function () {
-    return view('home');
-});
+// arahkan route utama ke method index di HomeController
+Route::get('/', [HomeController::class, 'index'])->name('home');
