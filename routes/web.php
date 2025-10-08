@@ -1,7 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController; // tambahkan ini
+use App\Http\Controllers\HomeController;
 
-// arahkan route utama ke method index di HomeController
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// route untuk tampilkan form
+Route::get('/form', function () {
+    return view('form');
+});
+
+// route untuk kirim data message
+Route::post('/kirim-pesan', [HomeController::class, 'kirimPesan'])->name('kirim.pesan');
