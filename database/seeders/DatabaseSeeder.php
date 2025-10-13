@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Book;
+use App\Models\Message;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +14,32 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
+        // Seed user contoh
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Hera',
+            'email' => 'hera2@gmail.com',
+        ]);
+
+        // Seed data buku
+        Book::create([
+            'title' => 'Pemrograman Laravel Dasar',
+            'author' => 'Heraa',
+            'year' => 2025,
+        ]);
+
+        Book::create([
+            'title' => 'Belajar Web Development',
+            'author' => 'Nadya',
+            'year' => 2024,
+        ]);
+
+        // Seed data message contoh
+        Message::create([
+            'content' => 'Selamat datang di aplikasi Kaspace!',
+        ]);
+
+        Message::create([
+            'content' => 'Ini adalah pesan contoh kedua.',
         ]);
     }
 }
